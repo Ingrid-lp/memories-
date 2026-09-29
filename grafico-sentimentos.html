@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Memories</title>
+    <link rel="stylesheet" href="css/mapa-ilhas.css">
+    <link rel="stylesheet" href="css/grafico-sentimentos.css">
+
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Alice&display=swap" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+
+<body>
+
+     <div id="main-app" class="app-container">
+
+       <div id="main-app" class="app-container">
+
+    
+    <div class="header-container">
+        <button id="menu-btn" class="icon-btn menu-btn">
+            <span class="material-icons">menu</span>
+        </button>
+
+        <img src="img/logo.png" alt="Logo Memories" class="app-logo">
+    </div>
+
+
+        <nav id="sidebar" class="sidebar">
+            <div class="user-profile-section">
+                <div class="user-info">
+                    <span class="material-icons" style="font-size: 48px;">account_circle</span>
+                    <span id="greeting"></span>
+                </div>
+
+                <button id="logout-btn" class="btn logout-btn">
+                    <span style="font-size: 30px;">Sair </span>
+                    <span class="material-icons" style="vertical-align: -5px;">exit_to_app</span>
+                </button>
+            </div>
+
+            <ul class="menu-list">
+                <li><a href="app.html" class="menu-item"><span class="material-icons">home</span> Minhas Memórias</a></li>
+                <li><a href="#" id="create-album-link" class="menu-item"><span class="material-icons">folder</span> Criar Álbum</a></li>
+                <li id="add-memory-container">
+                    <button id="add-memory-btn" class="btn add-btn"><span class="material-icons">add_box</span> Adicionar Memórias</button>
+                </li>
+                <li>
+                    <a href="mapa-ilhas.html" class="menu-item"><span class="material-icons">explore</span> Mapa das Ilhas</a>
+                </li>
+
+            </ul>
+            <ul id="albums-list" class="menu-list album-section">
+            </ul>
+        </nav>
+
+
+       <main id="main-content">
+    <div class="container">
+        <h2 class="page-title">Gráfico de Sentimentos</h2>
+        <p class="description-text">Qual sentimento mais te consome?</p>
+
+        <div id="chart-display-area" class="chart-container-wrapper">
+            <canvas id="meuGrafico" style="max-height: 80vh;"></canvas>
+        </div>
+    </div>
+</main>
+
+
+    <div id="custom-alert-container"></div>
+
+    <script src="script-mapa-ilhas.js"></script>
+    <script src="script-graficos.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,459 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap");
+
+:root {
+  --primary-color: #de8f5f;
+  --primary-dark-color: #ba7348;
+  --background-color: #f0f2f5;
+  --surface-color: #ffffff;
+  --text-color: #333;
+  --light-text-color: #777;
+  --border-color: #ccc;
+  --shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+
+.alice-regular {
+  font-family: "Alice", serif;
+  font-weight: 400;
+  font-style: normal;
+}
+
+/* Copiando estrutura do app.css para garantir consistência */
+.map-container {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+.app-header {
+  background-color: var(--surface-color);
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  padding: 15px 20px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 1000;
+}
+
+.app-header h1 {
+  font-size: 24px;
+  font-weight: 700;
+  margin: 0;
+}
+
+#menu-btn {
+  display: block;
+}
+
+.sidebar.show {
+  transform: translateX(0);
+}
+
+#main-content {
+  margin-left: 0;
+  padding: 90px 20px 20px 20px;
+  flex-grow: 1;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+}
+
+.add-btn {
+  padding: 2px 15px;
+}
+
+.user-profile-section {
+  background-color: #f3e1e1;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 25px;
+  border-radius: 1px 3px 30px 30px;
+  color: var(--primary-dark-color);
+}
+
+.user-info {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+
+.user-info span {
+  font-size: 18px;
+  font-weight: 500;
+}
+
+.logout-btn {
+  background: none;
+  border: none;
+  padding: 0;
+  color: #a86a46;
+  font: inherit;
+  font-size: 18px;
+  cursor: pointer;
+}
+
+.menu-list {
+  list-style: none;
+  padding: 0;
+  margin: 10px 0;
+}
+
+/* Remove padding do LI padrão para que o album-item-container controle */
+.menu-list li {
+    padding: 0;
+}
+
+.menu-list li a {
+  display: flex;
+  align-items: center;
+  /* Mantém padding do link para itens normais (home, criar album, etc) */
+  padding: 15px 20px; 
+  color: #b86f43;
+  text-decoration: none;
+  font-weight: 500;
+  transition: background-color 0.2s, color 0.2s;
+  font-size: 20px;
+}
+
+.menu-list .material-icons {
+  margin-right: 15px;
+}
+
+#add-memory-container {
+  padding: 10px 20px;
+}
+
+#add-memory-btn {
+  display: flex;
+  align-items: center;
+  color: var(--light-text-color);
+  text-decoration: none;
+  font-weight: 500;
+  transition: background-color 0.2s, color 0.2s;
+  border: none;
+  background-color: #de8f5f;
+  margin: 1px 0px 10px -15px;
+  font: inherit;
+  color: #b86f43;
+  font-size: 20px;
+  cursor: pointer;
+}
+
+.album-list {
+  list-style: none;
+  padding: 0;
+}
+
+.album-item-container {
+  display: flex; 
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  padding: 15px 20px; 
+  box-sizing: border-box;
+}
+
+.album-list li a.album-item {
+  padding: 0; 
+  display: flex; 
+  align-items: center;
+  flex-grow: 1; 
+  width: auto; 
+}
+
+.album-actions {
+    display: flex;
+    align-items: center;
+    gap: 5px; 
+    flex-shrink: 0; 
+}
+
+.album-actions .icon-btn {
+    padding: 3px;
+    height: 30px; 
+}
+
+.album-actions .material-icons {
+    color: #F3E1E1; 
+    font-size: 20px;
+}
+
+
+.album-list .material-icons {
+  margin-right: 15px;
+}
+
+.album-item-container .material-icons {
+  color: #f3e1e1;
+}
+
+.menu-item.album-item {
+  color: #f3e1e1 !important;
+}
+
+.icon-btn {
+  background: none;
+  border: none;
+  cursor: pointer;
+  color: var(--light-text-color);
+  transition: color 0.2s;
+}
+
+.icon-btn:hover {
+  color: var(--text-color);
+}
+
+#greeting {
+  color: var(--primary-color);
+  font-size: 30px;
+}
+
+#greeting .user-name {
+  color: #b86f43;
+  font-size: 30px;
+}
+
+
+/* esse island é o container q muda*/
+.islands-map {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  height: 86vh;
+  padding: 40px 25px 1px 25px;
+  overflow-y: auto;
+  overflow-x: hidden;
+  border-radius: 60px 60px 0 0;
+
+  /* backgroudn funciono*/
+  background-color: #ad723b;
+  background-image:
+    linear-gradient(rgb(150 101 77 / 6%) 2px, transparent 2px),
+    linear-gradient(90deg, rgb(150 72 34 / 6%) 2px, transparent 2px),
+    /* degrase gradiente*/
+    linear-gradient(180deg, #f9e8d0 0%, #fbeedc 100%);
+    
+  background-size:
+    60px 60px,
+    60px 60px,
+    100% 100%;
+
+
+  border: 5px solid rgb(178 112 62 / 47%);
+
+
+  box-shadow:
+    inset 0 0 70px rgb(123 62 21 / 53%);
+
+}
+
+
+  /* sposição das ilhas */
+.island-item {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.island-item:nth-child(even) {
+  align-self: flex-end;
+}
+
+.island-item:nth-child(odd) {
+  align-self: flex-start;
+}
+
+.island-image {
+  width: 180px;
+  height: auto;
+  filter: drop-shadow(0 4px 8px rgba(0, 0, 0, 0.2));
+  transition: transform 0.3s;
+}
+
+.island-item:hover .island-image {
+  transform: scale(1.05);
+}
+
+.palm-tree {
+  position: absolute;
+  font-size: 2rem;
+  left: -20px;
+  top: 50%;
+  transform: translateY(-50%);
+  filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.2));
+}
+
+.island-name {
+  margin-top: 0.5rem;
+  font-size: 1.2rem;
+  color: #5c4033;
+  text-align: center;
+  font-weight: bold;
+  text-shadow: 1px 1px 2px rgba(255, 255, 255, 0.5);
+}
+
+/*copiei e colei do app o menu sanduiche etc pra ficar igual */
+
+html, body {
+    height: 100%;
+    margin: 0;
+    background-color: var(--primary-color);
+}
+
+.alice-regular {
+  font-family: "Alice", serif;
+  font-weight: 400;
+  font-style: normal;
+}
+
+.app-container {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+.app-header {
+    background-color: var(--surface-color);
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    padding: 15px 20px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 1000;
+}
+
+.app-header h1 {
+    font-size: 24px;
+    font-weight: 700;
+    margin: 0;
+}
+
+#menu-btn {
+    display: block;
+    z-index: 1 !important; /* add important nessa bosta */
+}
+
+#menu-btn {
+    position: absolute;
+    top: 15px;
+    left: 15px;
+    border: none;
+    border-radius: 12px;
+    padding: 10px; /* aumenta o tamanho do botão */
+    display: block;
+    z-index: 1 !important; /* add important nessa bosta */
+}
+
+
+.menu-btn .material-icons {
+    font-size: 32px; 
+    color: #ffffff;
+}
+
+
+.sidebar {
+    width: 280px;
+    background-color: var(--primary-color);
+    box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1);
+    padding-top: 0;
+    position: fixed;
+    height: 100%;
+    transform: translateX(-100%);
+    transition: transform 0.3s ease;
+    z-index: 999;
+    display: flex;
+    flex-direction: column;
+    border-radius: 2px 40px 40px 2px;
+    overflow: hidden;
+}
+
+.sidebar.show {
+    transform: translateX(0);
+}
+
+#main-content {
+    margin-left: 0;
+    padding: 0 0 20px 0; /* Ajuste: Remoção do padding-top aqui */
+    flex-grow: 1;
+}
+
+.header-container {
+    position: relative;
+    width: 100%;
+    height: 100px; /* Ajuste: Reduzida a altura do header em mobile */
+    display: flex;
+    justify-content: center; 
+    align-items: center;     
+}
+
+#view-chart-btn {
+  position: absolute; 
+  top: 30px;         
+  right: 20px;       
+  background-color: #C57647;
+  color: #fff9f4;
+  border: none;
+  border-radius: 10px;
+  padding: 10px 10px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+#view-chart-btn .material-icons {
+    font-size: 36px; 
+}
+
+#rosa-ventos {
+  position: fixed;     
+  bottom: 20px;       
+  right: 20px;         
+  width: 150px;        
+  opacity: 0.2;
+  pointer-events: none; 
+  z-index: 0;         
+}
+
+#map-image {
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%) rotate(90deg);
+    width: 180vh;  /* Agora ocupa a largura do container *//* Agora ocupa a altura do container */
+    object-fit: cover;
+    opacity: 0.3;
+    pointer-events: none;
+    border-radius: 60px;
+}
+
+#islands-map-container {
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    margin: 0 auto;
+}
+
+
+p {
+    font:inherit;
+    color: #A66D47 !important;
+    margin: 10px 0;
+    line-height: 1.6; 
+}
+
+.app-logo {
+    height: 50px; 
+    object-fit: contain;
+}

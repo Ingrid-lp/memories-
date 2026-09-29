@@ -1,0 +1,75 @@
+#main-content {
+    display: block !important; 
+    padding: 20px; /* Adiciona algum padding para não colar nas bordas */
+}
+
+/* Centraliza o título e a descrição */
+.page-title, .description-text {
+    text-align: center;
+    margin: 0 auto 10px auto;
+    max-width: 1000px;
+}
+
+.chart-container-wrapper {
+    position: relative; 
+    width: 90%; 
+    height: 45vh;
+    padding: 0px; 
+}
+
+
+#meuGrafico {
+    max-height: 100%;
+    max-width: 100%;
+}
+
+/* Estilos para o contêiner */
+.container {
+    width: 100%;
+    height: 86vh;
+    padding: 40px 25px 1px 25px;
+    background-color:  #F3E1E1;
+    border-radius: 60px 60px 0 0;
+    box-shadow: 0 -4px 20px rgb(0 0 0 / 18%);
+    box-sizing: border-box;
+    margin: 0 auto;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    position: absolute;
+    overflow-y: auto; /* scrollagem */
+    overflow-x: hidden; /* scrollagem */
+}
+
+/* Outros estilos */
+#main-content {
+    padding: 20px;
+}
+
+.page-title {
+    font-size: 32px;
+    font-weight: bold;
+    color: #ba7348;
+    
+}
+
+.description-text {
+    font-size: 19px;
+    color: #de8f5f !important;
+}
+
+.chart-container-wrapper {
+    margin-top: 20px;
+    text-align: center;
+}
+
+canvas {
+    max-width: 100%;
+    max-height: 80vh; /* Mantém o gráfico responsivo */
+}
+
+.app-logo {
+    height: 70px; 
+    object-fit: contain;
+    margin-top: 20px;
+}

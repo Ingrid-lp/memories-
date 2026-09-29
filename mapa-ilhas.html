@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=UnifrakturMaguntia&display=swap" rel="stylesheet">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Memories</title>
+    <link rel="stylesheet" href="css/mapa-ilhas.css">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Alice&display=swap" rel="stylesheet">
+</head>
+
+<body>
+
+    <div id="main-app" class="app-container">
+
+        <div id="main-app" class="app-container">
+
+
+            <div class="header-container">
+                <button id="menu-btn" class="icon-btn menu-btn">
+            <span class="material-icons">menu</span>
+        </button>
+                 <img src="img/logo.png" alt="Logo Memories" class="app-logo">
+            </div>
+
+            <nav id="sidebar" class="sidebar">
+                <div class="user-profile-section">
+                    <div class="user-info">
+                        <span class="material-icons" style="font-size: 48px;">account_circle</span>
+                        <span id="greeting"></span>
+                    </div>
+
+                    <button id="logout-btn" class="btn logout-btn">
+                    <span style="font-size: 30px;">Sair </span>
+                    <span class="material-icons" style="vertical-align: -5px;">exit_to_app</span>
+                </button>
+                </div>
+
+                <ul class="menu-list">
+                    <li><a href="app.html" class="menu-item"><span class="material-icons">home</span> Minhas Memórias</a></li>
+                    <li><a href="#" id="create-album-link" class="menu-item"><span class="material-icons">folder</span> Criar Álbum</a></li>
+                    <li id="add-memory-container">
+                        <button id="add-memory-btn" class="btn add-btn"><span class="material-icons">add_box</span> Adicionar Memórias</button>
+                    </li>
+
+                    <li>
+                        <a href="mapa-ilhas.html" class="menu-item active"><span class="material-icons">explore</span> Mapa das Ilhas</a>
+                    </li>
+
+                </ul>
+                <ul id="albums-list" class="menu-list album-section">
+                </ul>
+            </nav>
+
+            <main id="main-content">
+
+                <div class="islands-map" id="islands-map-container">
+
+                    <button id="view-chart-btn" class="btn small-btn chart-btn">
+                    <span class="material-icons">bar_chart</span> 
+                </button>
+
+
+                    <img id="map-image" src="img/map.png" alt="Mapa das Ilhas">
+
+                    <div class="island-item">
+                        <img src="img/Ilhadafelicidade1.png" alt="Ilha Felicidade" class="island-image">
+                        <p class="island-name">Ilha Da Felicidade <span class="sentiment-count" data-sentiment="Felicidade">(0)</span></p>
+                    </div>
+
+                    <div class="island-item">
+                        <img src="img/Ilhadoamor1.png" alt="Ilha Amor" class="island-image">
+                        <p class="island-name">Ilha Do Amor <span class="sentiment-count" data-sentiment="Amor">(0)</span></p>
+                    </div>
+
+                    <div class="island-item">
+                        <img src="img/Ilhadatristeza1.png" alt="Ilha Tristeza" class="island-image">
+                        <p class="island-name">Ilha Da Tristeza <span class="sentiment-count" data-sentiment="Tristeza">(0)</span></p>
+                    </div>
+
+                    <div class="island-item">
+                        <img src="img/Ilhadanostalgia1.png" alt="Ilha Nostalgia" class="island-image">
+                        <p class="island-name">Ilha Da Nostalgia <span class="sentiment-count" data-sentiment="Nostalgia">(0)</span></p>
+                    </div>
+
+                    <div class="island-item">
+                        <img src="img/Ilhadaraiva1.png" alt="Ilha Raiva" class="island-image">
+                        <p class="island-name">Ilha Da Raiva <span class="sentiment-count" data-sentiment="Raiva">(0)</span></p>
+                    </div>
+
+                </div>
+
+        </div>
+        </main>
+    </div>
+
+    <div id="custom-alert-container"></div>
+
+    <img src="img/rosadosventos.png" alt="Rosa dos Ventos" id="rosa-ventos">
+
+
+    <script src="script-mapa-ilhas.js"></script>
+    <script src="script-graficos.js"></script>
+</body>
+
+</html>

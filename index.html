@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Memories</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Alice&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+</head>
+
+<body>
+
+    <div id="login-screen" class="container">
+        <h1 class="title">Login</h1>
+        <form id="login-form">
+            <div class="form-group">
+                <label for="login-email">Email:</label>
+                <input type="email" id="login-email" required>
+            </div>
+
+            <div class="form-group input-with-icon">
+                <label for="login-password">Senha:</label>
+                <input type="password" id="login-password" required>
+                <button class="icon-btn toggle-password" data-target-id="login-password">
+                    <span class="material-icons">visibility_off</span>
+                </button>
+            </div>
+
+            <button type="submit" class="btn">Entrar</button>
+        </form>
+
+        <p class="link-text">Não tem uma conta?</p> <button href="#" id="show-register">Cadastre-se</button>
+    </div>
+
+    <div id="register-screen" class="container" style="display: none;">
+        <h1 class="title">Cadastro</h1>
+        <form id="register-form">
+            <div class="form-group">
+                <label for="register-name">Nome:</label>
+                <input type="text" id="register-name" required>
+            </div>
+
+            <div class="form-group">
+                <label for="register-email">Email:</label>
+                <input type="email" id="register-email" required>
+            </div>
+
+            <div class="form-group input-with-icon">
+                <label for="register-password">Senha:</label>
+                <input type="password" id="register-password" required minlength="6">
+                <button class="icon-btn toggle-password" data-target-id="register-password">
+                    <span class="material-icons">visibility_off</span>
+                </button>
+            </div>
+
+            <button type="submit" class="btn">Cadastro</button>
+        </form>
+        <a href="#" id="show-login">Cancelar</a>
+    </div>
+
+    <div id="custom-alert-container"></div>
+
+    <script src="script-login.js"></script>
+</body>
+
+</html>

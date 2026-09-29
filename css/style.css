@@ -1,0 +1,311 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap');
+:root {
+    --primary-color: #DE8F5F;
+    --primary-dark-color: #BA7348;
+    --background-color: #f0f2f5;
+    --surface-color: #ffffff;
+    --text-color: #333;
+    --light-text-color: #777;
+    --border-color: #ccc;
+    --shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+html,
+body {
+    height: 100%;
+    margin: 0;
+}
+
+.alice-regular {
+    font-family: "Alice", serif;
+    font-weight: 400;
+    font-style: normal;
+}
+
+body {
+    font-family: "Alice", serif;
+    margin: 0;
+    background-color: var(--surface-color);
+    color: var(--primary-dark-color);
+    overflow-x: hidden;
+    background-color: var(--primary-color);
+    background-size: 411px;
+}
+
+.login-page {
+    background-color: var(--primary-color);
+    background-image: url('img/loginimage.png');
+}
+
+.container {
+    width: 100%;
+    min-height: 60vh;
+    padding: 10px 20px 50px 20px;
+    background-color: var(--surface-color);
+    border-radius: 60px 60px 0 0;
+    box-shadow: var(--shadow);
+    text-align: center;
+    box-sizing: border-box;
+    margin: 0 auto;
+    position: absolute;
+    bottom: 0;
+}
+
+.title {
+    font-size: 32px;
+    font-weight: 500;
+    margin-bottom: 6px;
+}
+
+.form-group {
+    margin-bottom: 20px;
+    text-align: left;
+}
+
+.form-group input,
+.form-group textarea {
+    width: 100%;
+    padding: 17px;
+    background-color: #EFEFEF;
+    border: none;
+    border-radius: 10px;
+    box-sizing: border-box;
+    font-size: 16px;
+}
+
+.btn {
+    font-family: "Alice", serif;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 6px 45px;
+    background-color: var(--primary-color);
+    color: #fff;
+    text-decoration: none;
+    border: none;
+    border-radius: 40px;
+    cursor: pointer;
+    font-size: 32px;
+    font-weight: 500;
+    transition: background-color 0.3s ease;
+    gap: 8px;
+    margin-bottom: 20px;
+    margin-top: 15px;
+}
+
+#show-login {
+    text-decoration: none;
+    color: var(--primary-color);
+    font-size: 24px;
+}
+
+#show-register {
+    text-decoration: none;
+    color: var(--primary-color);
+    font-size: 24px;
+    border-color: var(--primary-color);
+    background: none;
+    border-radius: 60px;
+    border-style: solid;
+    padding: 6px 45px;
+    margin-top: -13px;
+}
+
+.delete-btn {
+    background-color: #f44336;
+}
+
+.link-text {
+    margin-top: 20px;
+}
+
+.link-text a {
+    color: var(--primary-color);
+    text-decoration: none;
+    font-weight: 500;
+}
+
+.link-text a:hover {
+    text-decoration: underline;
+}
+
+
+/* --- ESTILOS DE NOTIFICAÇÃO CUSTOMIZADA --- */
+
+#custom-alert-container {
+    position: fixed;
+    top: 50%;
+    /* Centraliza verticalmente */
+    left: 50%;
+    /* Centraliza horizontalmente */
+    transform: translate(-50%, -50%);
+    /* Ajuste final para centralização perfeita */
+    z-index: 1000;
+    /* Garante que fique acima de tudo */
+    pointer-events: none;
+    /* Permite clicar através do container */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.custom-alert {
+    min-width: 250px;
+    padding: 15px 25px;
+    margin: 10px 0;
+    border-radius: 10px;
+    color: white;
+    font-size: 16px;
+    text-align: center;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.3s ease-in-out, transform 0.3s ease-in-out;
+    pointer-events: auto;
+}
+
+.custom-alert.show {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+
+/* Estilos para diferentes tipos de mensagem */
+
+.custom-alert.success {
+    background-color: var(--primary-color);
+    /* Usando a cor primária para sucesso */
+    border: 1px solid var(--primary-dark-color);
+}
+
+.custom-alert.error {
+    background-color: #f44336;
+    /* Vermelho para erros */
+    border: 1px solid #d32f2f;
+}
+
+.custom-alert.warning {
+    background-color: #ff9800;
+    /* Laranja para avisos */
+    border: 1px solid #f57c00;
+}
+
+.custom-alert.info {
+    background-color: #2196f3;
+    /* Azul para informações */
+    border: 1px solid #1976d2;
+}
+
+
+/* --- ESTILOS PARA MODAIS CUSTOMIZADOS (PROMPT/CONFIRM) --- */
+
+
+/* Garante que o modal fique centralizado e ocupe toda a tela */
+
+.modal {
+    display: none;
+    /* Escondido por padrão */
+    position: fixed;
+    z-index: 1000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0, 0, 0, 0.4);
+    align-items: center;
+    justify-content: center;
+}
+
+
+/* Container de conteúdo para o prompt/confirm */
+
+.custom-dialog-content {
+    background-color: var(--surface-color);
+    margin: auto;
+    padding: 30px 20px;
+    border-radius: 10px;
+    box-shadow: var(--shadow);
+    max-width: 90%;
+    width: 300px;
+    /* Largura fixa para caixas de diálogo */
+    text-align: center;
+}
+
+#custom-prompt-message,
+#custom-confirm-message {
+    font-size: 18px;
+    margin-bottom: 20px;
+    color: var(--primary-dark-color);
+    font-weight: 500;
+}
+
+#custom-prompt-input {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 20px;
+    box-sizing: border-box;
+    border: 1px solid var(--border-color);
+    border-radius: 5px;
+    font-size: 16px;
+    text-align: center;
+}
+
+
+/* Adicionado para diferenciar o input do prompt do input do form */
+
+.form-group-input {
+    width: 100%;
+    padding: 17px;
+    background-color: #EFEFEF;
+    border: none;
+    border-radius: 10px;
+    box-sizing: border-box;
+    font-size: 16px;
+}
+
+.modal-actions {
+    display: flex;
+    justify-content: space-around;
+    gap: 10px;
+    margin-top: 10px;
+}
+
+.modal-actions .btn {
+    flex-grow: 1;
+    font-size: 18px;
+    padding: 8px 15px;
+    margin: 0;
+}
+
+
+/* Exemplo de CSS essencial para posicionamento */
+
+.input-with-icon {
+    position: relative;
+    /* Container necessário para posicionar o ícone de forma absoluta */
+}
+
+.input-with-icon input[type="password"],
+.input-with-icon input[type="text"] {
+    padding-right: 40px;
+    /* Garante espaço para o ícone */
+    width: 100%;
+    box-sizing: border-box;
+}
+
+.toggle-password {
+    position: absolute;
+    right: 10px;
+    top: 50%;
+    /* Centraliza verticalmente (ajuste se a label estiver na mesma linha) */
+    /* Ajuste fino */
+    background: none;
+    border: none;
+}
+
+.toggle-password .material-icons {
+    font-size: 20px;
+    /* Tamanho do ícone */
+    color: var(--primary-dark-color);
+}
